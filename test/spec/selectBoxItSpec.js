@@ -249,7 +249,7 @@ describe('selectBoxIt jQuery Plugin', function () {
                 //Spy on the focus event for the next list item element to be focused
                 spyOnEvent(next, "focus");
 
-                //Call the moveUp() method
+                //Call the moveDown() method
                 selectBoxIt.moveDown();
 
                 //Check to make sure the blur and focus events were properly triggered on the correct elements
@@ -267,6 +267,16 @@ describe('selectBoxIt jQuery Plugin', function () {
                 expect(selectBoxIt.divText).toHaveText(selectBoxIt.listItems.eq(selectBoxIt.currentFocus).text());
 
             });
+
+        });
+
+        it("should open the drop down list", function() {
+
+            //Call the moveDown() method
+            selectBoxIt.moveDown();
+
+            //Check to make sure that the drop down list has been opened
+            expect(selectBoxIt.list).toBeVisible;
 
         });
 
@@ -315,6 +325,16 @@ describe('selectBoxIt jQuery Plugin', function () {
                 //Check to make sure the select box text is updated to the currently selected option
                 expect(selectBoxIt.divText).toHaveText(selectBoxIt.listItems.eq(selectBoxIt.currentFocus).text());
             });
+
+        });
+
+        it("should open the drop down list", function() {
+
+            //Call the moveUp() method
+            selectBoxIt.moveUp();
+
+            //Check to make sure that the drop down list has been opened
+            expect(selectBoxIt.list).toBeVisible;
 
         });
 

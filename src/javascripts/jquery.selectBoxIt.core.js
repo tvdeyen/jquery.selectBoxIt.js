@@ -125,7 +125,7 @@
 
             }
 
-            
+
 
             // Adds jQueryUI classes to the dropdown list if the jqueryUI option is set to true
             this._addClasses();
@@ -791,6 +791,11 @@
                                 // If the plugin options allow keyboard navigation
                                 if (self.moveDown) {
 
+                                    //Opens the dropdown list if it's hidden
+                                    if (self.list.is(":hidden")) {
+                                        self.open();
+                                    }
+
                                     // Moves the focus down to the dropdown list option directly beneath the currently selected selectbox option
                                     self.moveDown();
 
@@ -806,6 +811,11 @@
 
                                 // If the plugin options allow keyboard navgiation
                                 if (self.moveUp) {
+
+                                    //Opens the dropdown list if it's hidden
+                                    if (self.list.is(":hidden")) {
+                                        self.open();
+                                    }
 
                                     // Moves the focus up to the dropdown list option directly above the currently selected selectbox option
                                     self.moveUp();
