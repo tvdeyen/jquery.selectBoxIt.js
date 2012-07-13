@@ -128,6 +128,13 @@
             // Adds jQueryUI classes to the dropdown list if the jqueryUI option is set to true
             this._addClasses();
 
+            // Focus the selectbox div, if the original select tag has autofocus attribute
+            if (this.selectBox.attr("autofocus")) {
+
+                this.div.focus();
+
+            }
+
             // Triggers a custom `create` event on the original dropdown list
             this.selectBox.trigger("create");
 
