@@ -176,7 +176,7 @@
                 // Dynamically sets the div `id` attribute
                 "id": this.originalElem.id + "SelectBoxIt",
 
-                "class": "selectboxit",
+                "class": "selectboxit" + (this.originalElem.className !== "" ? " " + this.originalElem.className : ""),
 
                 // Sets the div `name` attribute to be the same name as the original select box
                 "name": this.originalElem.name,
@@ -197,7 +197,7 @@
 
                 "id": this.originalElem.id + "SelectBoxItContainer",
 
-                "class": "selectboxit-container" + (this.originalElem.className !== "" ? " " + this.originalElem.className : "")
+                "class": "selectboxit-container"
             }).
 
             // Appends the inner dropdown list div element to the dropdown list container div element
